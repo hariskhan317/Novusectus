@@ -1,0 +1,33 @@
+:root {
+
+    --primary:#C71F37;
+    --secondary:#1F2B3C;
+    --assistant:#6A9D83;
+    --member:#985F33;
+    --guestcolor:#3A969C;
+    --orange:#F8A830;
+    --darkorange:#E69113;
+    --orange1:#F2994A;
+    --darkbrown: #382317;
+    --neutral:#F3ECE6;
+    --darkerneutral:#E0D1BC;
+    --black:#000000;
+    --white:#FFFFFF;
+    --grey:#79736A;
+    --gray:#E7E7E7;
+    --gray4:#BDBDBD;
+    --gray5:#E0E0E0;
+    --gray6:#F2F2F2;
+    --gray7:#868078;
+    --grey3: #828282;
+    --grey4:#E5E5E5;
+    --yellow:#F2C94C;
+    --yellow2:#BE8D16;
+    --green:#1A8B08;
+    --green1:#219653;
+    --green2:#90A435;
+    --green3:#395622;
+    --blue:#2F80ED;
+    --darkblue:#3C6EB9;
+    --redvine:#760300;
+}

@@ -1,0 +1,1464 @@
+<html>
+    <head>
+     
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+           <link rel="stylesheet" href="./assets/css/style.css">
+           <link rel="stylesheet" href="./assets/css/colors.css">
+          <script src="./assets/js/javascript.js"></script>
+          <!-- jquery -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <style>
+            .check-input:checked {
+    background-color: #C71F37 !important;
+    border-color: #C71F37 !important;
+}
+.tick-form:checked {
+    background-color: var(--member);
+    border-color: var(--member);
+}
+        </style>
+        </head>
+    <body>
+
+
+        <section id="report-section">
+            <div class="container-fluid px-3 px-md-5">
+                <div class="row mt-5 bottom-border pb-4">
+                    <div class="col-12 col-xl-6 mb-3 mb-xl-0 zindex-class">
+                        <p class="frame10-head-text ">Execution Meeting - Summary</p>
+                        <p class="frame10-date ">10 August 2021</p>
+                    </div>
+                    <div class="col-12 col-xl-6">
+                        <div class="d-flex justify-content-center justify-content-md-end">
+                            <div class="row">
+                                <div class="col-12 col-md-6" >
+                                    <div class="triangle-area "  >
+                                    <div class="triangle-sm">
+                                        <div onclick="resultdisplay()" class="result-sm">
+                                            <p  class="triangle-text me-2 mt-3">Result</p> 
+                                        </div>
+                                        <div class="result-popup py-1 px-3" id="result">
+                                            <p class="popup-text border-bottom my-3">Result</p>
+                                            <textarea class="form-control " rows="1" id="comment"></textarea>
+                                            <div class="d-flex mt-2">
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-low" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-medium " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Medium
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-high " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        High
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div onclick="accountabilitydisplay()" class="accountability-sm">
+                                            <p  class="triangle-text">Accountability</p>
+                                        </div>
+                                        <div class="accountability-popup py-1 px-3" id="accountability">
+                                            <p class="popup-text border-bottom my-3 ">Accountability</p>
+                                            <textarea class="form-control " rows="1" id="comment"></textarea>
+                                            <div class="d-flex mt-2">
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-low" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-medium " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Medium
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-high " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        High
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div onclick="commitmentdisplay()" class="commitment-sm">
+                                            <p  class="triangle-text">Commitment</p>
+                                        </div>
+                                        <div class="commitment-popup py-1 px-3" id="commitment">
+                                            <p class="popup-text border-bottom my-3 ">Commitment</p>
+                                            <textarea class="form-control " rows="1" id="comment"></textarea>
+                                            <div class="d-flex mt-2">
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-low" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-medium " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Medium
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-high " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        High
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div onclick="conflictdisplay()" class="conflict-sm">
+                                            <p  class="triangle-text ps-4">Conflict</p>
+                                        </div>
+                                        <div class="conflict-popup py-1 px-3" id="conflict">
+                                            <p class="popup-text border-bottom my-3 ">Conflict</p>
+                                            <textarea class="form-control " rows="1" id="comment"></textarea>
+                                            <div class="d-flex mt-2">
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-low" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-medium " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Mediuim
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-high " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        High
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div onclick="trustdisplay()" class="trust-sm">
+                                            <p  class="triangle-text">Trust</p>
+                                        </div>
+                                        <div class="trust-popup py-1 px-3" id="trust">
+                                            <p class="popup-text border-bottom my-3 ">Trust</p>
+                                            <textarea class="form-control " rows="1" id="comment"></textarea>
+                                            <div class="d-flex mt-2">
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-low" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-medium " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        Mediuim
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input popup-chech-high " type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label popup-chech-text" for="flexCheckDefault">
+                                                        High
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                <div>
+                                    <div>
+                                        <div class="d-flex justify-content-end mt-4 mt-md-0">
+                                            <p class="frame-10-team-text">Team Name</p>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <p class="frame-10-attendee-text">Attendees</p>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier3png.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier4.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier3png.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier4.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier3png.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier4.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier3png.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/healthier4.png" alt="">
+                                            </div>
+                                            <div class="frame5-img-border-sidebar me-1">
+                                                <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- table section -->
+                <div class="row mt-5 ">
+                    <p class="frame-10-tablehead bottom-border">Decisions to speed up execution</p>
+                    <!-- table -->
+                    <div class="" style="overflow-x: auto;">
+                        <table class="" style="border-color:white !important;">
+                            <tr class="frame5-table-head ">
+                                <th style="width: 20%;" class="table-heading ">
+                                    Actions
+                                    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.12946 6.7984C4.17075 6.86057 4.22599 6.91141 4.29043 6.94653C4.35488 6.98165 4.42659 7 4.49939 7C4.57219 7 4.6439 6.98165 4.70835 6.94653C4.77279 6.91141 4.82803 6.86057 4.86932 6.7984L8.91964 0.73215C8.96652 0.662181 8.99401 0.580228 8.99913 0.495195C9.00424 0.410163 8.98679 0.325302 8.94866 0.249833C8.91053 0.174365 8.85318 0.111175 8.78284 0.0671292C8.71251 0.0230835 8.63188 -0.000133618 8.54971 5.78465e-07H0.449073C0.367096 0.000351679 0.286762 0.0238674 0.216711 0.0680186C0.14666 0.11217 0.089541 0.175286 0.0514976 0.25058C0.0134543 0.325874 -0.00407424 0.410497 0.000796921 0.495348C0.00566809 0.580199 0.0327547 0.662067 0.0791438 0.73215L4.12946 6.7984Z" fill="#E0D1BC"/>
+                                    </svg>                                            
+                                </th>
+                                <th style="width: 6%;" class="table-heading">
+                                    Owner
+                                    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.12946 6.7984C4.17075 6.86057 4.22599 6.91141 4.29043 6.94653C4.35488 6.98165 4.42659 7 4.49939 7C4.57219 7 4.6439 6.98165 4.70835 6.94653C4.77279 6.91141 4.82803 6.86057 4.86932 6.7984L8.91964 0.73215C8.96652 0.662181 8.99401 0.580228 8.99913 0.495195C9.00424 0.410163 8.98679 0.325302 8.94866 0.249833C8.91053 0.174365 8.85318 0.111175 8.78284 0.0671292C8.71251 0.0230835 8.63188 -0.000133618 8.54971 5.78465e-07H0.449073C0.367096 0.000351679 0.286762 0.0238674 0.216711 0.0680186C0.14666 0.11217 0.089541 0.175286 0.0514976 0.25058C0.0134543 0.325874 -0.00407424 0.410497 0.000796921 0.495348C0.00566809 0.580199 0.0327547 0.662067 0.0791438 0.73215L4.12946 6.7984Z" fill="#E0D1BC"/>
+                                    </svg>   
+                                </th>
+                                <th style="width: 12%;" class="table-heading">
+                                    Due Date
+                                    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.12946 6.7984C4.17075 6.86057 4.22599 6.91141 4.29043 6.94653C4.35488 6.98165 4.42659 7 4.49939 7C4.57219 7 4.6439 6.98165 4.70835 6.94653C4.77279 6.91141 4.82803 6.86057 4.86932 6.7984L8.91964 0.73215C8.96652 0.662181 8.99401 0.580228 8.99913 0.495195C9.00424 0.410163 8.98679 0.325302 8.94866 0.249833C8.91053 0.174365 8.85318 0.111175 8.78284 0.0671292C8.71251 0.0230835 8.63188 -0.000133618 8.54971 5.78465e-07H0.449073C0.367096 0.000351679 0.286762 0.0238674 0.216711 0.0680186C0.14666 0.11217 0.089541 0.175286 0.0514976 0.25058C0.0134543 0.325874 -0.00407424 0.410497 0.000796921 0.495348C0.00566809 0.580199 0.0327547 0.662067 0.0791438 0.73215L4.12946 6.7984Z" fill="#E0D1BC"/>
+                                    </svg>  
+                                </th>
+                                <th style="width: 12%;" class="table-heading ">
+                                    Cascading
+                                    <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.12946 6.7984C4.17075 6.86057 4.22599 6.91141 4.29043 6.94653C4.35488 6.98165 4.42659 7 4.49939 7C4.57219 7 4.6439 6.98165 4.70835 6.94653C4.77279 6.91141 4.82803 6.86057 4.86932 6.7984L8.91964 0.73215C8.96652 0.662181 8.99401 0.580228 8.99913 0.495195C9.00424 0.410163 8.98679 0.325302 8.94866 0.249833C8.91053 0.174365 8.85318 0.111175 8.78284 0.0671292C8.71251 0.0230835 8.63188 -0.000133618 8.54971 5.78465e-07H0.449073C0.367096 0.000351679 0.286762 0.0238674 0.216711 0.0680186C0.14666 0.11217 0.089541 0.175286 0.0514976 0.25058C0.0134543 0.325874 -0.00407424 0.410497 0.000796921 0.495348C0.00566809 0.580199 0.0327547 0.662067 0.0791438 0.73215L4.12946 6.7984Z" fill="#E0D1BC"/>
+                                    </svg>  
+                                </th>
+                            </tr>
+                            <tr class="row-shadow">
+                                <td class="frame5-table-text ">Conduct a customer survey to find out their experience</td>
+                                <td class="frame5-table-text">
+                                    <div class="d-flex">
+                                        <div class="frame5-img-border-sidebar mx-2">
+                                            <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="frame5-table-text">20 May 2021</td>
+                                <td class=" ">
+                                    <button class="btn-none frame-btn-text">
+                                        <svg  class="me-0 me-lg-1 hover-red-svg"  width="21" height="20" viewBox="0 0 21 20" fill="#1F2B3C"  xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.5 6.67852C20.4995 6.27553 20.3373 5.88918 20.0489 5.60422C19.7605 5.31926 19.3694 5.15897 18.9615 5.15852H15.8846V2.11851C15.8842 1.71552 15.7219 1.32917 15.4335 1.04421C15.1451 0.759252 14.754 0.598963 14.3462 0.598511H2.03846C1.63058 0.598963 1.23953 0.759252 0.951111 1.04421C0.662693 1.32917 0.500458 1.71552 0.5 2.11851V14.2785C0.499979 14.422 0.541082 14.5626 0.618552 14.684C0.696022 14.8054 0.806694 14.9026 0.937764 14.9645C1.06883 15.0263 1.21495 15.0502 1.3592 15.0334C1.50345 15.0167 1.63994 14.9599 1.75288 14.8696L5.11538 12.1838L5.11548 15.0385C5.11594 15.4415 5.27817 15.8279 5.56659 16.1128C5.85501 16.3978 6.24606 16.5581 6.65394 16.5585H15.6528L19.2473 19.4296C19.3603 19.5198 19.4967 19.5766 19.6409 19.5933C19.7852 19.6101 19.9312 19.5861 20.0623 19.5243C20.1933 19.4625 20.304 19.3653 20.3814 19.2439C20.4589 19.1226 20.5 18.982 20.5 18.8386V6.67852ZM16.4084 15.2076C16.2715 15.0983 16.1008 15.0386 15.9248 15.0385H6.65394L6.65385 11.9985H14.3462C14.754 11.9981 15.1451 11.8378 15.4335 11.5528C15.7219 11.2679 15.8842 10.8815 15.8846 10.4785V6.67852H18.9615L18.9616 17.2469L16.4084 15.2076Z" fill=""/>
+                                         </svg>   
+                                         Messages                                                                                                     
+                                    </button>                                                                                                                                                                                        
+                                </td>
+                            </tr>
+                            <tr class=" row-shadow">
+                                <td class="frame5-table-text ">Build a handbook for company culture</td>
+                                <td class="frame5-table-text">
+                                    <div class="d-flex">
+                                        <div class="frame5-img-border-sidebar mx-2">
+                                            <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="frame5-table-text">20 May 2021</td>
+                                <td class="">
+                                    <button class="btn-none frame-btn-text">
+                                        <svg  class="me-0 me-lg-1 hover-red-svg"  width="21" height="20" viewBox="0 0 21 20" fill="#1F2B3C"  xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.5 6.67852C20.4995 6.27553 20.3373 5.88918 20.0489 5.60422C19.7605 5.31926 19.3694 5.15897 18.9615 5.15852H15.8846V2.11851C15.8842 1.71552 15.7219 1.32917 15.4335 1.04421C15.1451 0.759252 14.754 0.598963 14.3462 0.598511H2.03846C1.63058 0.598963 1.23953 0.759252 0.951111 1.04421C0.662693 1.32917 0.500458 1.71552 0.5 2.11851V14.2785C0.499979 14.422 0.541082 14.5626 0.618552 14.684C0.696022 14.8054 0.806694 14.9026 0.937764 14.9645C1.06883 15.0263 1.21495 15.0502 1.3592 15.0334C1.50345 15.0167 1.63994 14.9599 1.75288 14.8696L5.11538 12.1838L5.11548 15.0385C5.11594 15.4415 5.27817 15.8279 5.56659 16.1128C5.85501 16.3978 6.24606 16.5581 6.65394 16.5585H15.6528L19.2473 19.4296C19.3603 19.5198 19.4967 19.5766 19.6409 19.5933C19.7852 19.6101 19.9312 19.5861 20.0623 19.5243C20.1933 19.4625 20.304 19.3653 20.3814 19.2439C20.4589 19.1226 20.5 18.982 20.5 18.8386V6.67852ZM16.4084 15.2076C16.2715 15.0983 16.1008 15.0386 15.9248 15.0385H6.65394L6.65385 11.9985H14.3462C14.754 11.9981 15.1451 11.8378 15.4335 11.5528C15.7219 11.2679 15.8842 10.8815 15.8846 10.4785V6.67852H18.9615L18.9616 17.2469L16.4084 15.2076Z" fill=""/>
+                                         </svg>   
+                                         Messages                                                                                                     
+                                    </button>                                                                                                                                                                                        
+                                </td>
+                            </tr>
+                            <tr class="row-shadow">
+                                <td class="frame5-table-text    ">Design a social ads campaign targetting top executives </td>
+                                <td class="frame5-table-text">
+                                    <div class="d-flex">
+                                        <div class="frame5-img-border-sidebar mx-2">
+                                            <img class="rounded-circle-img-sidebar" src="./pics/images/profile3.png" alt="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="frame5-table-text">20 May 2021</td>
+                                <td class="circle-right-border">
+                                    <button class="btn-none frame-btn-text">
+                                        <svg  class="me-0 me-lg-1 hover-red-svg"  width="21" height="20" viewBox="0 0 21 20" fill="#1F2B3C"  xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.5 6.67852C20.4995 6.27553 20.3373 5.88918 20.0489 5.60422C19.7605 5.31926 19.3694 5.15897 18.9615 5.15852H15.8846V2.11851C15.8842 1.71552 15.7219 1.32917 15.4335 1.04421C15.1451 0.759252 14.754 0.598963 14.3462 0.598511H2.03846C1.63058 0.598963 1.23953 0.759252 0.951111 1.04421C0.662693 1.32917 0.500458 1.71552 0.5 2.11851V14.2785C0.499979 14.422 0.541082 14.5626 0.618552 14.684C0.696022 14.8054 0.806694 14.9026 0.937764 14.9645C1.06883 15.0263 1.21495 15.0502 1.3592 15.0334C1.50345 15.0167 1.63994 14.9599 1.75288 14.8696L5.11538 12.1838L5.11548 15.0385C5.11594 15.4415 5.27817 15.8279 5.56659 16.1128C5.85501 16.3978 6.24606 16.5581 6.65394 16.5585H15.6528L19.2473 19.4296C19.3603 19.5198 19.4967 19.5766 19.6409 19.5933C19.7852 19.6101 19.9312 19.5861 20.0623 19.5243C20.1933 19.4625 20.304 19.3653 20.3814 19.2439C20.4589 19.1226 20.5 18.982 20.5 18.8386V6.67852ZM16.4084 15.2076C16.2715 15.0983 16.1008 15.0386 15.9248 15.0385H6.65394L6.65385 11.9985H14.3462C14.754 11.9981 15.1451 11.8378 15.4335 11.5528C15.7219 11.2679 15.8842 10.8815 15.8846 10.4785V6.67852H18.9615L18.9616 17.2469L16.4084 15.2076Z" fill=""/>
+                                         </svg>   
+                                         Messages                                                                                                     
+                                    </button>                                                                                                                                                                                         
+                                </td>
+                            </tr>
+                       
+                          </table>
+                    </div>
+                </div>
+                <!-- better-team-section -->
+                <div class="row mt-5">
+                    <p class="frame-10-tablehead bottom-border">Behaviours to become a better team</p>
+                    <div class="row">
+                        <div class="col-12 col-xl-6 pe-5">
+                            <p class="better-team-section-heading">Did we speed up execution?</p>
+                            <div class="row ">
+                                            <div class="col-1 p-2 ms-4 ms-md-0 mt-3">
+                                                <p class="meeting-12-end-text-frame10">7/8</p>
+                                            </div>
+                                            <div class="col-12 col-md-5  col-lg-2 p-2 ms-4 ms-md-0 mt-3">
+                                               <div class="speedup-card-green-frame-10 p-2">
+                                                <div class="d-flex justify-content-between ">
+                                                    <div class="">
+                                                        <p class="meeting-12-end-text-card">3</p>
+                                                    </div>
+                                                    <div> 
+                                                        <svg  class="green-svg-frame-10" width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M38.0928 73.1907C57.4227 73.1907 73.0928 57.5206 73.0928 38.1907C73.0928 18.8607 57.4227 3.19067 38.0928 3.19067C18.7628 3.19067 3.09277 18.8607 3.09277 38.1907C3.09277 57.5206 18.7628 73.1907 38.0928 73.1907Z" fill="white" stroke="#395622" stroke-width="5" stroke-linecap="round"/>
+                                                            <path d="M24.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M24.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M52.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M52.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" fill="white"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" stroke="#395622" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                                                                                       
+                                                    </div>
+                                                    <div>
+                                                        <svg class=" green-tick-frame-10 "  width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.26317 24.2193L0.488163 13.7595C-0.0390231 13.1311 -0.0390231 12.1122 0.488163 11.4837L2.39731 9.20798C2.92449 8.57951 3.77932 8.57951 4.3065 9.20798L10.2178 16.2541L22.879 1.16198C23.4062 0.533572 24.2611 0.533572 24.7882 1.16198L26.6974 3.43774C27.2246 4.06615 27.2246 5.08503 26.6974 5.7135L11.1724 24.2194C10.6451 24.8478 9.79036 24.8478 9.26317 24.2193Z" fill="#395622"/>
+                                                        </svg> 
+                                                    </div>                                          
+                                                </div>
+                                                <div>
+                                                    <p class="speedup-card-text-frame-10 mt-2">Yes, and removed all roadblocks</p>
+                                                </div> 
+                                               </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <div class="speedup-card-yellow-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card">2</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M37.5693 73.1907C56.8993 73.1907 72.5693 57.5206 72.5693 38.1907C72.5693 18.8607 56.8993 3.19067 37.5693 3.19067C18.2394 3.19067 2.56934 18.8607 2.56934 38.1907C2.56934 57.5206 18.2394 73.1907 37.5693 73.1907Z" fill="white" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M23.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M51.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M23.5693 53.4407H51.5693" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                </svg>  
+                                                        </div> 
+                                                        <div>
+                                                            <svg class=" yellow-tick-frame-10 " width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M10.0171 24.2193L1.24207 13.7595C0.714883 13.1311 0.714883 12.1122 1.24207 11.4837L3.15121 9.20798C3.6784 8.57951 4.53322 8.57951 5.06041 9.20798L10.9717 16.2541L23.6329 1.16198C24.1601 0.533572 25.015 0.533572 25.5421 1.16198L27.4513 3.43774C27.9785 4.06615 27.9785 5.08503 27.4513 5.7135L11.9263 24.2194C11.399 24.8478 10.5443 24.8478 10.0171 24.2193Z" fill="#BE8D16"/>
+                                                            </svg>                                                                  
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Yes, but still some roadblocks</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-5 ms-lg-4 mt-4">
+                                                <div class="speedup-card-redvine-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card" style="opacity: 0;">1</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg-frame-10 " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M38.3994 73.1907C57.7294 73.1907 73.3994 57.5206 73.3994 38.1907C73.3994 18.8607 57.7294 3.19067 38.3994 3.19067C19.0694 3.19067 3.39941 18.8607 3.39941 38.1907C3.39941 57.5206 19.0694 73.1907 38.3994 73.1907Z" fill="white" stroke="#760300" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M24.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M24.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M52.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M52.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" fill="white"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" stroke="#760300" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                                
+                                                        </div> 
+                                                        <div>   
+                                                            <svg class=" redvine-tick-frame-10 " width="23" height="20" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                 <path d="M9.1704 24.2193L0.39539 13.7595C-0.131797 13.1311 -0.131797 12.1122 0.39539 11.4837L2.30453 9.20798C2.83172 8.57951 3.68654 8.57951 4.21373 9.20798L10.125 16.2541L22.7863 1.16198C23.3135 0.533572 24.1683 0.533572 24.6955 1.16198L26.6046 3.43774C27.1318 4.06615 27.1318 5.08503 26.6046 5.7135L11.0796 24.2194C10.5524 24.8478 9.69758 24.8478 9.1704 24.2193Z" fill="#760300"/>
+                                                            </svg>
+                                                                                                                              
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Not really</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <svg  style="width: 130px; height:120px;" viewBox="0 0 82 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <line x1="1.5459" y1="0.610352" x2="1.54589" y2="82.0518" stroke="black" stroke-width="3"/>
+                                                    <line x1="81.4873" y1="81.1072" x2="0.0458068" y2="81.1072" stroke="black" stroke-width="3"/>
+                                                    <line x1="2.47754" y1="41.2905" x2="81.4874" y2="41.2905" stroke="#79736A" stroke-dasharray="3 3"/>
+                                                    <line x1="4.49098" y1="17.996" x2="23.7801" y2="40.2092" stroke="#C71F37" stroke-width="3"/>
+                                                    <path d="M21.6683 40.0568L36.5709 26.8664" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="36.0957" y1="28.6122" x2="53.0778" y2="52.3941" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="52.7998" y1="53.7588" x2="80.1827" y2="5.49322" stroke="#C71F37" stroke-width="3"/>
+                                                </svg>                                                    
+                                            </div>
+                                       
+                            </div>
+                            <div class="row mt-5">
+                                <p class="better-team-section-heading">Did I improve on my own behaviour commitment?​</p>
+                            
+                                            <div class="col-1 p-2 ms-4 ms-md-0 mt-3">
+                                                <p class="meeting-12-end-text-frame10">7/8</p>
+                                            </div>
+                                           <div class="col-12 col-md-5  col-lg-2 p-2 ms-4 ms-md-0 mt-3">
+                                               <div class="speedup-card-green-frame-10 p-2">
+                                                <div class="d-flex justify-content-between ">
+                                                    <div class="">
+                                                        <p class="meeting-12-end-text-card">5</p>
+                                                    </div>
+                                                    <div> 
+                                                        <svg  class="green-svg-frame-10" width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M38.0928 73.1907C57.4227 73.1907 73.0928 57.5206 73.0928 38.1907C73.0928 18.8607 57.4227 3.19067 38.0928 3.19067C18.7628 3.19067 3.09277 18.8607 3.09277 38.1907C3.09277 57.5206 18.7628 73.1907 38.0928 73.1907Z" fill="white" stroke="#395622" stroke-width="5" stroke-linecap="round"/>
+                                                            <path d="M24.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M24.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M52.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M52.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" fill="white"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" stroke="#395622" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                                                                                       
+                                                    </div>
+                                                    <div>
+                                                        <svg class=" green-tick-frame-10 "  width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.26317 24.2193L0.488163 13.7595C-0.0390231 13.1311 -0.0390231 12.1122 0.488163 11.4837L2.39731 9.20798C2.92449 8.57951 3.77932 8.57951 4.3065 9.20798L10.2178 16.2541L22.879 1.16198C23.4062 0.533572 24.2611 0.533572 24.7882 1.16198L26.6974 3.43774C27.2246 4.06615 27.2246 5.08503 26.6974 5.7135L11.1724 24.2194C10.6451 24.8478 9.79036 24.8478 9.26317 24.2193Z" fill="#395622"/>
+                                                        </svg> 
+                                                    </div>                                          
+                                                </div>
+                                                <div>
+                                                    <p class="speedup-card-text-frame-10 mt-2">Yes, and removed all roadblocks</p>
+                                                </div> 
+                                               </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <div class="speedup-card-yellow-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card">2</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M37.5693 73.1907C56.8993 73.1907 72.5693 57.5206 72.5693 38.1907C72.5693 18.8607 56.8993 3.19067 37.5693 3.19067C18.2394 3.19067 2.56934 18.8607 2.56934 38.1907C2.56934 57.5206 18.2394 73.1907 37.5693 73.1907Z" fill="white" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M23.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M51.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M23.5693 53.4407H51.5693" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                </svg>  
+                                                        </div> 
+                                                        <div>
+                                                            <svg class=" yellow-tick-frame-10 " width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M10.0171 24.2193L1.24207 13.7595C0.714883 13.1311 0.714883 12.1122 1.24207 11.4837L3.15121 9.20798C3.6784 8.57951 4.53322 8.57951 5.06041 9.20798L10.9717 16.2541L23.6329 1.16198C24.1601 0.533572 25.015 0.533572 25.5421 1.16198L27.4513 3.43774C27.9785 4.06615 27.9785 5.08503 27.4513 5.7135L11.9263 24.2194C11.399 24.8478 10.5443 24.8478 10.0171 24.2193Z" fill="#BE8D16"/>
+                                                            </svg>                                                                  
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Yes, but still some roadblocks</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-5 ms-lg-4 mt-4">
+                                                <div class="speedup-card-redvine-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card" style="opacity: 0;">1</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg-frame-10 " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M38.3994 73.1907C57.7294 73.1907 73.3994 57.5206 73.3994 38.1907C73.3994 18.8607 57.7294 3.19067 38.3994 3.19067C19.0694 3.19067 3.39941 18.8607 3.39941 38.1907C3.39941 57.5206 19.0694 73.1907 38.3994 73.1907Z" fill="white" stroke="#760300" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M24.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M24.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M52.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M52.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" fill="white"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" stroke="#760300" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                                
+                                                        </div> 
+                                                        <div>   
+                                                            <svg class=" redvine-tick-frame-10 " width="23" height="20" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                 <path d="M9.1704 24.2193L0.39539 13.7595C-0.131797 13.1311 -0.131797 12.1122 0.39539 11.4837L2.30453 9.20798C2.83172 8.57951 3.68654 8.57951 4.21373 9.20798L10.125 16.2541L22.7863 1.16198C23.3135 0.533572 24.1683 0.533572 24.6955 1.16198L26.6046 3.43774C27.1318 4.06615 27.1318 5.08503 26.6046 5.7135L11.0796 24.2194C10.5524 24.8478 9.69758 24.8478 9.1704 24.2193Z" fill="#760300"/>
+                                                            </svg>
+                                                                                                                              
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Not really</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <svg  style="width: 130px; height:120px;" viewBox="0 0 82 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <line x1="1.5459" y1="0.610352" x2="1.54589" y2="82.0518" stroke="black" stroke-width="3"/>
+                                                    <line x1="81.4873" y1="81.1072" x2="0.0458068" y2="81.1072" stroke="black" stroke-width="3"/>
+                                                    <line x1="2.47754" y1="41.2905" x2="81.4874" y2="41.2905" stroke="#79736A" stroke-dasharray="3 3"/>
+                                                    <line x1="4.49098" y1="17.996" x2="23.7801" y2="40.2092" stroke="#C71F37" stroke-width="3"/>
+                                                    <path d="M21.6683 40.0568L36.5709 26.8664" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="36.0957" y1="28.6122" x2="53.0778" y2="52.3941" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="52.7998" y1="53.7588" x2="80.1827" y2="5.49322" stroke="#C71F37" stroke-width="3"/>
+                                                </svg>                                                    
+                                            </div>
+                                       
+                            </div>
+                            <div class="row mt-5">
+                                <div class="form-group ms-5 ms-md-0" style="margin-top: -20px;">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend mt-4">
+                                            <div class="healthierteam-profile-1 me-2"></div>
+                                        </div>
+                                        <form action="" >
+                                            <div onclick="displaytable()" class="form-group " style="cursor: pointer !important;" >
+                                                <div class="d-flex colors-table-meeting-5">
+                                                    <p class="red-circle mt-1 mx-1"></p>
+                                                    <p class="blue-circle mt-1 mx-1"></p>
+                                                    <p>/</p>
+                                                    <p class="green-circle mt-1 mx-1"></p>
+                                                    <p class="yellow-circle mt-1 mx-1"></p>
+                                                </div>
+                                            </div>
+                                            <div id="mydiv" class="select-table-meeting-5">
+                                                <div class="select-color">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color " aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="frame-10-commitment-text mt-4 ms-2">This is dummy individual commitment</p>
+                                    </div>
+                                </div>
+                                <div class="form-group ms-5 ms-md-0" style="margin-top: -15px;">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend mt-4">
+                                            <div class="healthierteam-profile-1 me-2"></div>
+                                        </div>
+                                        <form action="" >
+                                            <div onclick="displaytable2()" class="form-group " style="cursor: pointer !important;" >
+                                                <div class="d-flex colors-table-meeting-5">
+                                                    <p class="red-circle mt-1 mx-1"></p>
+                                                    <p class="blue-circle mt-1 mx-1"></p>
+                                                    <p>/</p>
+                                                    <p class="green-circle mt-1 mx-1"></p>
+                                                    <p class="yellow-circle mt-1 mx-1"></p>
+                                                </div>
+                                            </div>
+                                            <div id="mydiv2" class="select-table-meeting-5">
+                                                <div class="select-color">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color " aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="frame-10-commitment-text mt-4 ms-2">This is dummy individual commitment</p>
+                                    </div>
+                                </div>
+                                <div class="form-group ms-5 ms-md-0" style="margin-top: -15px;">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend mt-4">
+                                            <div class="healthierteam-profile-1 me-2"></div>
+                                        </div>
+                                        <form action="" >
+                                            <div onclick="displaytable3()" class="form-group " style="cursor: pointer !important;" >
+                                                <div class="d-flex colors-table-meeting-5">
+                                                    <p class="red-circle mt-1 mx-1"></p>
+                                                    <p class="blue-circle mt-1 mx-1"></p>
+                                                    <p>/</p>
+                                                    <p class="green-circle mt-1 mx-1"></p>
+                                                    <p class="yellow-circle mt-1 mx-1"></p>
+                                                </div>
+                                            </div>
+                                            <div id="mydiv3" class="select-table-meeting-5">
+                                                <div class="select-color">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color " aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="frame-10-commitment-text mt-4 ms-2">This is dummy individual commitment</p>
+                                    </div>
+                                </div>
+                                <div class="form-group ms-5 ms-md-0" style="margin-top: -15px;">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend mt-4">
+                                            <div class="healthierteam-profile-1 me-2"></div>
+                                        </div>
+                                        <form action="" >
+                                            <div onclick="displaytable4()" class="form-group " style="cursor: pointer !important;" >
+                                                <div class="d-flex colors-table-meeting-5">
+                                                    <p class="red-circle mt-1 mx-1"></p>
+                                                    <p class="blue-circle mt-1 mx-1"></p>
+                                                    <p>/</p>
+                                                    <p class="green-circle mt-1 mx-1"></p>
+                                                    <p class="yellow-circle mt-1 mx-1"></p>
+                                                </div>
+                                            </div>
+                                            <div id="mydiv4" class="select-table-meeting-5">
+                                                <div class="select-color">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color " aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="frame-10-commitment-text mt-4 ms-2">This is dummy individual commitment</p>
+                                    </div>
+                                </div>
+                                <div class="form-group ms-5 ms-md-0" style="margin-top: -15px;">
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend mt-4">
+                                            <div class="healthierteam-profile-1 me-2"></div>
+                                        </div>
+                                        <form action="" >
+                                            <div onclick="displaytable5()" class="form-group " style="cursor: pointer !important;" >
+                                                <div class="d-flex colors-table-meeting-5">
+                                                    <p class="red-circle mt-1 mx-1"></p>
+                                                    <p class="blue-circle mt-1 mx-1"></p>
+                                                    <p>/</p>
+                                                    <p class="green-circle mt-1 mx-1"></p>
+                                                    <p class="yellow-circle mt-1 mx-1"></p>
+                                                </div>
+                                            </div>
+                                            <div id="mydiv5" class="select-table-meeting-5">
+                                                <div class="select-color-meeting-5">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input tick-form" type="checkbox" value="" id="flexCheckChecked">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color" aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <div class="">
+                                                                <button class=" dropdown-select-color" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                  
+                                                                </button>
+                                                                <ul class="dropdown-menu menu-select-color " aria-labelledby="dropdownMenuButton1">
+                                                                  <li><a class="dropdown-item dropdown-item-red "   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-blue"   href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-green"  href=""></a></li>
+                                                                  <li><a class="dropdown-item dropdown-item-yellow" href=""></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <p class="frame-10-commitment-text mt-4 ms-2">This is dummy individual commitment</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <p class="frame-10-subheading">How did we manage time during the meeting?</p>
+                                <div class="d-flex  ">
+                                    <div class="me-2 me-md-5">
+                                        <p class="frame-10-subtext">Lightning round (average/person): </p>
+                                        <p class="frame-10-subtext">Roadblocks’ identification (average/priority): </p>
+                                        <p class="frame-10-subtext">Resolving roadblocks (average/roadblock): </p>
+                                    </div>
+                                    <div class="ms-2 me-md-5">
+                                        <p class="frame-10-subtime">5 min</p>
+                                        <p class="frame-10-subtime">7 min</p>
+                                        <p class="frame-10-subtime">10 min</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                            <p class="better-team-section-heading">Did we become a better team?</p>
+                            <div class="row ">
+                                <p class="better-team-section-text">Team behaviour commitment 1</p>
+                            
+                                            <div class="col-1 p-2 ms-4 ms-md-0 mt-3">
+                                                <p class="meeting-12-end-text-frame10">7/8</p>
+                                            </div>
+                                           <div class="col-12 col-md-5  col-lg-2 p-2 ms-4 ms-md-0 mt-3">
+                                               <div class="speedup-card-green-frame-10 p-2">
+                                                <div class="d-flex justify-content-between ">
+                                                    <div class="">
+                                                        <p class="meeting-12-end-text-card">3</p>
+                                                    </div>
+                                                    <div> 
+                                                        <svg  class="green-svg-frame-10" width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M38.0928 73.1907C57.4227 73.1907 73.0928 57.5206 73.0928 38.1907C73.0928 18.8607 57.4227 3.19067 38.0928 3.19067C18.7628 3.19067 3.09277 18.8607 3.09277 38.1907C3.09277 57.5206 18.7628 73.1907 38.0928 73.1907Z" fill="white" stroke="#395622" stroke-width="5" stroke-linecap="round"/>
+                                                            <path d="M24.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M24.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M52.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M52.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" fill="white"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" stroke="#395622" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                                                                                       
+                                                    </div>
+                                                    <div>
+                                                        <svg class=" green-tick-frame-10 "  width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.26317 24.2193L0.488163 13.7595C-0.0390231 13.1311 -0.0390231 12.1122 0.488163 11.4837L2.39731 9.20798C2.92449 8.57951 3.77932 8.57951 4.3065 9.20798L10.2178 16.2541L22.879 1.16198C23.4062 0.533572 24.2611 0.533572 24.7882 1.16198L26.6974 3.43774C27.2246 4.06615 27.2246 5.08503 26.6974 5.7135L11.1724 24.2194C10.6451 24.8478 9.79036 24.8478 9.26317 24.2193Z" fill="#395622"/>
+                                                        </svg> 
+                                                    </div>                                          
+                                                </div>
+                                                <div>
+                                                    <p class="speedup-card-text-frame-10 mt-2">Yes, and removed all roadblocks</p>
+                                                </div> 
+                                               </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <div class="speedup-card-yellow-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card">2</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M37.5693 73.1907C56.8993 73.1907 72.5693 57.5206 72.5693 38.1907C72.5693 18.8607 56.8993 3.19067 37.5693 3.19067C18.2394 3.19067 2.56934 18.8607 2.56934 38.1907C2.56934 57.5206 18.2394 73.1907 37.5693 73.1907Z" fill="white" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M23.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M51.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M23.5693 53.4407H51.5693" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                </svg>  
+                                                        </div> 
+                                                        <div>
+                                                            <svg class=" yellow-tick-frame-10 " width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M10.0171 24.2193L1.24207 13.7595C0.714883 13.1311 0.714883 12.1122 1.24207 11.4837L3.15121 9.20798C3.6784 8.57951 4.53322 8.57951 5.06041 9.20798L10.9717 16.2541L23.6329 1.16198C24.1601 0.533572 25.015 0.533572 25.5421 1.16198L27.4513 3.43774C27.9785 4.06615 27.9785 5.08503 27.4513 5.7135L11.9263 24.2194C11.399 24.8478 10.5443 24.8478 10.0171 24.2193Z" fill="#BE8D16"/>
+                                                            </svg>                                                                  
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Yes, but still some roadblocks</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-5 ms-lg-4 mt-4">
+                                                <div class="speedup-card-redvine-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card" style="opacity: 0;">1</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg-frame-10 " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M38.3994 73.1907C57.7294 73.1907 73.3994 57.5206 73.3994 38.1907C73.3994 18.8607 57.7294 3.19067 38.3994 3.19067C19.0694 3.19067 3.39941 18.8607 3.39941 38.1907C3.39941 57.5206 19.0694 73.1907 38.3994 73.1907Z" fill="white" stroke="#760300" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M24.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M24.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M52.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M52.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" fill="white"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" stroke="#760300" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                                
+                                                        </div> 
+                                                        <div>   
+                                                            <svg class=" redvine-tick-frame-10 " width="23" height="20" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                 <path d="M9.1704 24.2193L0.39539 13.7595C-0.131797 13.1311 -0.131797 12.1122 0.39539 11.4837L2.30453 9.20798C2.83172 8.57951 3.68654 8.57951 4.21373 9.20798L10.125 16.2541L22.7863 1.16198C23.3135 0.533572 24.1683 0.533572 24.6955 1.16198L26.6046 3.43774C27.1318 4.06615 27.1318 5.08503 26.6046 5.7135L11.0796 24.2194C10.5524 24.8478 9.69758 24.8478 9.1704 24.2193Z" fill="#760300"/>
+                                                            </svg>
+                                                                                                                              
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Not really</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <svg  style="width: 130px; height:120px;" viewBox="0 0 82 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <line x1="1.5459" y1="0.610352" x2="1.54589" y2="82.0518" stroke="black" stroke-width="3"/>
+                                                    <line x1="81.4873" y1="81.1072" x2="0.0458068" y2="81.1072" stroke="black" stroke-width="3"/>
+                                                    <line x1="2.47754" y1="41.2905" x2="81.4874" y2="41.2905" stroke="#79736A" stroke-dasharray="3 3"/>
+                                                    <line x1="4.49098" y1="17.996" x2="23.7801" y2="40.2092" stroke="#C71F37" stroke-width="3"/>
+                                                    <path d="M21.6683 40.0568L36.5709 26.8664" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="36.0957" y1="28.6122" x2="53.0778" y2="52.3941" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="52.7998" y1="53.7588" x2="80.1827" y2="5.49322" stroke="#C71F37" stroke-width="3"/>
+                                                </svg>                                                    
+                                            </div>
+                                       
+                            </div>
+                            <div class="row ">
+                                <p class="better-team-section-text mt-4">Team behaviour commitment 1</p>
+                            
+                                            <div class="col-1 p-2 ms-4 ms-md-0 mt-3">
+                                                <p class="meeting-12-end-text-frame10">7/8</p>
+                                            </div>
+                                           <div class="col-12 col-md-5  col-lg-2 p-2 ms-4 ms-md-0 mt-3">
+                                               <div class="speedup-card-green-frame-10 p-2">
+                                                <div class="d-flex justify-content-between ">
+                                                    <div class="">
+                                                        <p class="meeting-12-end-text-card">3</p>
+                                                    </div>
+                                                    <div> 
+                                                        <svg  class="green-svg-frame-10" width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M38.0928 73.1907C57.4227 73.1907 73.0928 57.5206 73.0928 38.1907C73.0928 18.8607 57.4227 3.19067 38.0928 3.19067C18.7628 3.19067 3.09277 18.8607 3.09277 38.1907C3.09277 57.5206 18.7628 73.1907 38.0928 73.1907Z" fill="white" stroke="#395622" stroke-width="5" stroke-linecap="round"/>
+                                                            <path d="M24.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M24.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M52.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M52.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" fill="white"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" stroke="#395622" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                                                                                       
+                                                    </div>
+                                                    <div>
+                                                        <svg class=" green-tick-frame-10 "  width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.26317 24.2193L0.488163 13.7595C-0.0390231 13.1311 -0.0390231 12.1122 0.488163 11.4837L2.39731 9.20798C2.92449 8.57951 3.77932 8.57951 4.3065 9.20798L10.2178 16.2541L22.879 1.16198C23.4062 0.533572 24.2611 0.533572 24.7882 1.16198L26.6974 3.43774C27.2246 4.06615 27.2246 5.08503 26.6974 5.7135L11.1724 24.2194C10.6451 24.8478 9.79036 24.8478 9.26317 24.2193Z" fill="#395622"/>
+                                                        </svg> 
+                                                    </div>                                          
+                                                </div>
+                                                <div>
+                                                    <p class="speedup-card-text-frame-10 mt-2">Yes, and removed all roadblocks</p>
+                                                </div> 
+                                               </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <div class="speedup-card-yellow-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card">2</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M37.5693 73.1907C56.8993 73.1907 72.5693 57.5206 72.5693 38.1907C72.5693 18.8607 56.8993 3.19067 37.5693 3.19067C18.2394 3.19067 2.56934 18.8607 2.56934 38.1907C2.56934 57.5206 18.2394 73.1907 37.5693 73.1907Z" fill="white" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M23.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M51.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M23.5693 53.4407H51.5693" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                </svg>  
+                                                        </div> 
+                                                        <div>
+                                                            <svg class=" yellow-tick-frame-10 " width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M10.0171 24.2193L1.24207 13.7595C0.714883 13.1311 0.714883 12.1122 1.24207 11.4837L3.15121 9.20798C3.6784 8.57951 4.53322 8.57951 5.06041 9.20798L10.9717 16.2541L23.6329 1.16198C24.1601 0.533572 25.015 0.533572 25.5421 1.16198L27.4513 3.43774C27.9785 4.06615 27.9785 5.08503 27.4513 5.7135L11.9263 24.2194C11.399 24.8478 10.5443 24.8478 10.0171 24.2193Z" fill="#BE8D16"/>
+                                                            </svg>                                                                  
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Yes, but still some roadblocks</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-5 ms-lg-4 mt-4">
+                                                <div class="speedup-card-redvine-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card" style="opacity: 0;">1</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg-frame-10 " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M38.3994 73.1907C57.7294 73.1907 73.3994 57.5206 73.3994 38.1907C73.3994 18.8607 57.7294 3.19067 38.3994 3.19067C19.0694 3.19067 3.39941 18.8607 3.39941 38.1907C3.39941 57.5206 19.0694 73.1907 38.3994 73.1907Z" fill="white" stroke="#760300" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M24.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M24.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M52.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M52.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" fill="white"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" stroke="#760300" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                                
+                                                        </div> 
+                                                        <div>   
+                                                            <svg class=" redvine-tick-frame-10 " width="23" height="20" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                 <path d="M9.1704 24.2193L0.39539 13.7595C-0.131797 13.1311 -0.131797 12.1122 0.39539 11.4837L2.30453 9.20798C2.83172 8.57951 3.68654 8.57951 4.21373 9.20798L10.125 16.2541L22.7863 1.16198C23.3135 0.533572 24.1683 0.533572 24.6955 1.16198L26.6046 3.43774C27.1318 4.06615 27.1318 5.08503 26.6046 5.7135L11.0796 24.2194C10.5524 24.8478 9.69758 24.8478 9.1704 24.2193Z" fill="#760300"/>
+                                                            </svg>
+                                                                                                                              
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Not really</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <svg  style="width: 130px; height:120px;" viewBox="0 0 82 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <line x1="1.5459" y1="0.610352" x2="1.54589" y2="82.0518" stroke="black" stroke-width="3"/>
+                                                    <line x1="81.4873" y1="81.1072" x2="0.0458068" y2="81.1072" stroke="black" stroke-width="3"/>
+                                                    <line x1="2.47754" y1="41.2905" x2="81.4874" y2="41.2905" stroke="#79736A" stroke-dasharray="3 3"/>
+                                                    <line x1="4.49098" y1="17.996" x2="23.7801" y2="40.2092" stroke="#C71F37" stroke-width="3"/>
+                                                    <path d="M21.6683 40.0568L36.5709 26.8664" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="36.0957" y1="28.6122" x2="53.0778" y2="52.3941" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="52.7998" y1="53.7588" x2="80.1827" y2="5.49322" stroke="#C71F37" stroke-width="3"/>
+                                                </svg>                                                    
+                                            </div>
+                                       
+                            </div>
+                            <div class="row mt-5">  
+                                <p class="better-team-section-text mt-4">Team behaviour commitment 1 Dummy text for two lines Team behaviour commitment 1 Dummy text for two lines </p>
+                            
+                                            <div class="col-1 p-2 ms-4 ms-md-0 mt-3">
+                                                <p class="meeting-12-end-text-frame10">7/8</p>
+                                            </div>
+                                           <div class="col-12 col-md-5  col-lg-2 p-2 ms-4 ms-md-0 mt-3">
+                                               <div class="speedup-card-green-frame-10 p-2">
+                                                <div class="d-flex justify-content-between ">
+                                                    <div class="">
+                                                        <p class="meeting-12-end-text-card">3</p>
+                                                    </div>
+                                                    <div> 
+                                                        <svg  class="green-svg-frame-10" width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M38.0928 73.1907C57.4227 73.1907 73.0928 57.5206 73.0928 38.1907C73.0928 18.8607 57.4227 3.19067 38.0928 3.19067C18.7628 3.19067 3.09277 18.8607 3.09277 38.1907C3.09277 57.5206 18.7628 73.1907 38.0928 73.1907Z" fill="white" stroke="#395622" stroke-width="5" stroke-linecap="round"/>
+                                                            <path d="M24.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M24.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M52.0928 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                            <path d="M52.0928 30.8656V30.5156" stroke="#395622" stroke-width="11" stroke-linecap="round"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" fill="white"/>
+                                                            <path d="M56.8517 53.4407C54.5068 58.6907 48.4571 63.9407 38.0928 63.9407C27.7286 63.9407 21.6788 58.6907 19.334 53.4407" stroke="#395622" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                                                                                       
+                                                    </div>
+                                                    <div>
+                                                        <svg class=" green-tick-frame-10 "  width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9.26317 24.2193L0.488163 13.7595C-0.0390231 13.1311 -0.0390231 12.1122 0.488163 11.4837L2.39731 9.20798C2.92449 8.57951 3.77932 8.57951 4.3065 9.20798L10.2178 16.2541L22.879 1.16198C23.4062 0.533572 24.2611 0.533572 24.7882 1.16198L26.6974 3.43774C27.2246 4.06615 27.2246 5.08503 26.6974 5.7135L11.1724 24.2194C10.6451 24.8478 9.79036 24.8478 9.26317 24.2193Z" fill="#395622"/>
+                                                        </svg> 
+                                                    </div>                                          
+                                                </div>
+                                                <div>
+                                                    <p class="speedup-card-text-frame-10 mt-2">Yes, and removed all roadblocks</p>
+                                                </div> 
+                                               </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <div class="speedup-card-yellow-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card">2</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M37.5693 73.1907C56.8993 73.1907 72.5693 57.5206 72.5693 38.1907C72.5693 18.8607 56.8993 3.19067 37.5693 3.19067C18.2394 3.19067 2.56934 18.8607 2.56934 38.1907C2.56934 57.5206 18.2394 73.1907 37.5693 73.1907Z" fill="white" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M23.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M51.5693 30.8656V30.5156" stroke="#BE8D16" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M23.5693 53.4407H51.5693" stroke="#BE8D16" stroke-width="5" stroke-linecap="round"/>
+                                                                </svg>  
+                                                        </div> 
+                                                        <div>
+                                                            <svg class=" yellow-tick-frame-10 " width="23" height="20" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M10.0171 24.2193L1.24207 13.7595C0.714883 13.1311 0.714883 12.1122 1.24207 11.4837L3.15121 9.20798C3.6784 8.57951 4.53322 8.57951 5.06041 9.20798L10.9717 16.2541L23.6329 1.16198C24.1601 0.533572 25.015 0.533572 25.5421 1.16198L27.4513 3.43774C27.9785 4.06615 27.9785 5.08503 27.4513 5.7135L11.9263 24.2194C11.399 24.8478 10.5443 24.8478 10.0171 24.2193Z" fill="#BE8D16"/>
+                                                            </svg>                                                                  
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Yes, but still some roadblocks</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-5 ms-lg-4 mt-4">
+                                                <div class="speedup-card-redvine-frame-10 p-2">
+                                                    <div class="d-flex justify-content-between ">
+                                                        <div class="">
+                                                            <p class="meeting-12-end-text-card" style="opacity: 0;">1</p>
+                                                        </div> 
+                                                        <div>
+                                                            <svg class="face-svg-frame-10 " width="56" height="56" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M38.3994 73.1907C57.7294 73.1907 73.3994 57.5206 73.3994 38.1907C73.3994 18.8607 57.7294 3.19067 38.3994 3.19067C19.0694 3.19067 3.39941 18.8607 3.39941 38.1907C3.39941 57.5206 19.0694 73.1907 38.3994 73.1907Z" fill="white" stroke="#760300" stroke-width="5" stroke-linecap="round"/>
+                                                                <path d="M24.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M24.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M52.3994 30.8656V30.5156V30.8656Z" fill="white"/>
+                                                                <path d="M52.3994 30.8656V30.5156" stroke="#760300" stroke-width="11" stroke-linecap="round"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" fill="white"/>
+                                                                <path d="M56.6555 58.6907C54.3735 53.4407 48.4858 48.1907 38.399 48.1907C28.3123 48.1907 22.4246 53.4407 20.1426 58.6907" stroke="#760300" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                </svg>
+                                                                
+                                                        </div> 
+                                                        <div>   
+                                                            <svg class=" redvine-tick-frame-10 " width="23" height="20" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                 <path d="M9.1704 24.2193L0.39539 13.7595C-0.131797 13.1311 -0.131797 12.1122 0.39539 11.4837L2.30453 9.20798C2.83172 8.57951 3.68654 8.57951 4.21373 9.20798L10.125 16.2541L22.7863 1.16198C23.3135 0.533572 24.1683 0.533572 24.6955 1.16198L26.6046 3.43774C27.1318 4.06615 27.1318 5.08503 26.6046 5.7135L11.0796 24.2194C10.5524 24.8478 9.69758 24.8478 9.1704 24.2193Z" fill="#760300"/>
+                                                            </svg>
+                                                                                                                              
+                                                        </div>                                       
+                                                    </div>
+                                                    <div>
+                                                        <p class="speedup-card-text-frame-10 mt-2">Not really</p>
+                                                    </div> 
+                                                   </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 col-lg-2 ms-4 ms-md-0 ms-lg-4 mt-4">
+                                                <svg  style="width: 130px; height:120px;" viewBox="0 0 82 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <line x1="1.5459" y1="0.610352" x2="1.54589" y2="82.0518" stroke="black" stroke-width="3"/>
+                                                    <line x1="81.4873" y1="81.1072" x2="0.0458068" y2="81.1072" stroke="black" stroke-width="3"/>
+                                                    <line x1="2.47754" y1="41.2905" x2="81.4874" y2="41.2905" stroke="#79736A" stroke-dasharray="3 3"/>
+                                                    <line x1="4.49098" y1="17.996" x2="23.7801" y2="40.2092" stroke="#C71F37" stroke-width="3"/>
+                                                    <path d="M21.6683 40.0568L36.5709 26.8664" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="36.0957" y1="28.6122" x2="53.0778" y2="52.3941" stroke="#C71F37" stroke-width="3"/>
+                                                    <line x1="52.7998" y1="53.7588" x2="80.1827" y2="5.49322" stroke="#C71F37" stroke-width="3"/>
+                                                </svg>                                                    
+                                            </div>
+                                       
+                            </div>
+                            <div class="row mt-5 pt-4">
+                                <p class="frame-10-subheading">Did we call out unproductive behaviours?</p>
+                                <div class="d-flex ">
+                                    <div class="me-0 me-md-5">
+                                        <p class="frame-10-subtext">
+                                            <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5048 15.3695V25.7695C10.1406 25.7676 5.11511 26.4348 2.63001 24.2511C0.14491 22.0674 0.379279 17.1901 0.0701245 13.9641C0.0701276 8.14069 -0.511097 5.44134 1.27029 2.36953C3.29841 -0.215258 9.44845 0.551679 10.6609 0.5517L13.5048 2.36953H20.2548C22.0427 2.36952 23.7576 3.05256 25.023 4.26873C26.2885 5.48491 27.0013 7.13487 27.0048 8.85653V20.5825C27.0013 21.9594 26.4308 23.2787 25.4184 24.2511C24.4061 25.2235 23.0347 25.7695 21.6048 25.7695V23.1695C22.3209 23.1695 23.0077 22.8956 23.514 22.408C24.0204 21.9204 24.3048 21.2591 24.3048 20.5695C24.3048 19.88 24.0204 19.2186 23.514 18.731C23.0077 18.2435 22.3209 17.9695 21.6048 17.9695H16.2048L13.5048 15.3695ZM20.9298 11.4695C21.4669 11.4695 21.982 11.2641 22.3617 10.8984C22.7415 10.5327 22.9548 10.0367 22.9548 9.51953C22.9548 9.00235 22.7415 8.50636 22.3617 8.14067C21.982 7.77497 21.4669 7.56953 20.9298 7.56953C20.3928 7.56953 19.8777 7.77497 19.4979 8.14067C19.1182 8.50636 18.9048 9.00235 18.9048 9.51953C18.9048 10.0367 19.1182 10.5327 19.4979 10.8984C19.8777 11.2641 20.3928 11.4695 20.9298 11.4695Z" fill="#1F2B3C"/>
+                                                </svg>
+                                                There is an elephant in the room </p>
+                                        <p class="frame-10-subtext">
+                                            <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.5039 18.4362C16.7864 18.4362 18.6289 16.5379 18.6289 14.1862C18.6289 12.5995 17.7902 11.2112 16.5664 10.4887L3.21516 2.52703L10.8189 16.0987C11.5064 17.487 12.8952 18.4362 14.5039 18.4362ZM14.5039 0.0195312C12.0152 0.0195312 9.69141 0.727865 7.67016 1.88953L10.5577 3.6037C11.7539 3.12203 13.1289 2.85286 14.5039 2.85286C20.5814 2.85286 25.5039 7.92453 25.5039 14.1862C25.5039 17.317 24.2802 20.1504 22.2864 22.1904H22.2727C22.1452 22.3214 22.0441 22.4771 21.9751 22.6485C21.9061 22.8199 21.8705 23.0036 21.8705 23.1891C21.8705 23.3747 21.9061 23.5584 21.9751 23.7297C22.0441 23.9011 22.1452 24.0568 22.2727 24.1879C22.8089 24.7404 23.6889 24.7404 24.2252 24.202C25.5039 22.8883 26.5182 21.3271 27.2095 19.6083C27.9009 17.8895 28.2558 16.0468 28.2539 14.1862C28.2539 6.39453 22.0664 0.0195312 14.5039 0.0195312ZM0.753906 14.1862C0.753906 18.0962 2.29391 21.6379 4.78266 24.202C5.31891 24.7404 6.18516 24.7404 6.72141 24.1879C6.84887 24.0568 6.95 23.9011 7.019 23.7297C7.088 23.5584 7.12352 23.3747 7.12352 23.1891C7.12352 23.0036 7.088 22.8199 7.019 22.6485C6.95 22.4771 6.84887 22.3214 6.72141 22.1904C5.69881 21.1411 4.88801 19.8936 4.33578 18.5198C3.78355 17.146 3.50082 15.6731 3.50391 14.1862C3.50391 12.7695 3.76516 11.3529 4.24641 10.0779L2.58266 7.10286C1.44141 9.22786 0.753906 11.6079 0.753906 14.1862Z" fill="#1F2B3C"/>
+                                            </svg>                                                
+                                            This discussion does not speed up execution</p>
+                                        <p class="frame-10-subtext">
+                                            <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M14.5054 0.369629C6.81609 0.369629 0.583984 6.81663 0.583984 14.7696C0.583794 16.6609 0.943753 18.5337 1.6433 20.2811C2.34285 22.0284 3.36829 23.6161 4.66106 24.9535C5.95382 26.2908 7.48859 27.3516 9.1777 28.0753C10.8668 28.799 12.6772 29.1713 14.5054 29.1711C22.1919 29.1711 28.4254 22.7241 28.4254 14.7696C28.424 6.81663 22.1904 0.369629 14.5054 0.369629ZM14.504 26.1681C13.0568 26.1681 11.6238 25.8733 10.2868 25.3004C8.94981 24.7275 7.73497 23.8877 6.71167 22.8291C5.68837 21.7706 4.87664 20.5138 4.32283 19.1307C3.76903 17.7476 3.48398 16.2652 3.48398 14.7681C3.48398 13.2711 3.76903 11.7886 4.32283 10.4055C4.87664 9.02243 5.68837 7.7657 6.71167 6.70711C7.73497 5.64852 8.94981 4.80881 10.2868 4.2359C11.6238 3.663 13.0568 3.36813 14.504 3.36813C17.4267 3.36813 20.2297 4.5692 22.2963 6.70711C24.363 8.84503 25.524 11.7447 25.524 14.7681C25.524 17.7916 24.363 20.6912 22.2963 22.8291C20.2297 24.9671 17.4267 26.1681 14.504 26.1681ZM18.1304 14.3946C19.331 14.3946 20.3054 13.2201 20.3054 11.7696C20.3054 10.3191 19.331 9.14463 18.1304 9.14463C16.9298 9.14463 15.9554 10.3191 15.9554 11.7696C15.9554 13.2201 16.9284 14.3946 18.1304 14.3946ZM10.8804 14.3946C12.081 14.3946 13.0554 13.2201 13.0554 11.7696C13.0554 10.3191 12.081 9.14463 10.8804 9.14463C9.67984 9.14463 8.70543 10.3191 8.70543 11.7696C8.70543 13.2201 9.67838 14.3946 10.8804 14.3946ZM14.5069 16.6446C9.54209 16.6446 7.80499 20.1171 7.73248 20.2656C7.60327 20.5326 7.58186 20.8417 7.67295 21.125C7.76405 21.4082 7.96019 21.6425 8.21824 21.7761C8.47628 21.9098 8.77508 21.932 9.04891 21.8377C9.32274 21.7435 9.54917 21.5406 9.67838 21.2736C9.68999 21.2481 10.8703 18.8946 14.5069 18.8946C18.0782 18.8946 19.289 21.1851 19.3325 21.2721C19.3956 21.4055 19.4836 21.5246 19.5914 21.6226C19.6992 21.7206 19.8247 21.7955 19.9607 21.8431C20.0966 21.8907 20.2404 21.91 20.3835 21.8998C20.5267 21.8897 20.6666 21.8503 20.795 21.784C20.9234 21.7177 21.0378 21.6257 21.1317 21.5134C21.2256 21.4011 21.2971 21.2707 21.342 21.1297C21.387 20.9887 21.4045 20.8399 21.3936 20.6918C21.3826 20.5438 21.3435 20.3994 21.2784 20.2671C21.2073 20.1186 19.4717 16.6446 14.5069 16.6446Z" fill="#1F2B3C"/>
+                                            </svg>
+                                            We are not living by our team commitments </p>
+                                    </div>
+                                    <div class="ms-5">
+                                        <p class="frame-10-subtime">2</p>
+                                        <p class="frame-10-subtime">3</p>
+                                        <p class="frame-10-subtime">1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- meeting-note section -->
+                <div class="row mt-5">
+                    <p class="frame-10-tablehead bottom-border">Meeting Notes</p>
+                    <div class="d-flex mt-5">
+                        <div >
+                            <img class="img-border-member" src="./pics/images/meetingnotes-user2.png" height="54px" width="52px" style="margin-left: -1px;" alt="">
+                        </div>
+                        <div class="ms-4">
+                            <p class="meeting-note-text p-2 ">Hi! , I need help</p>
+                            <span class="meeting-note-spantext">09:23 PM</span>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-5">
+                        <div >
+                            <img class="img-border-member" src="./pics/images/meetingnotes-user3.png" height="54px" width="52px" style="margin-left: -1px;" alt="">
+                        </div>
+                        <div class="ms-4">
+                            <p class="meeting-note-text p-2 ">This is a dummy text message from the meeting notes</p>
+                            <span class="meeting-note-spantext">09:25 PM</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- logo section -->
+                 <div class="row my-5 top-border pt-3">
+                    <img class="" src="./pics/images/newlogo.png" class="img-fluid " style="width: 297px; height: 36px;"  alt="logo" title="logo">
+                </div>
+            </div>
+        </section>
+
+
+
+        <script>
+             // trianle js
+            function resultdisplay() {
+            var x = document.getElementById("result");
+            if (x.style.display === "none") {
+                x.style.display = "block";} 
+            else {
+                x.style.display = "none";}  }
+                
+            function accountabilitydisplay() {
+            var x = document.getElementById("accountability");
+            if (x.style.display === "none") {
+                x.style.display = "block";} 
+            else {
+                x.style.display = "none";}  }  
+
+            function commitmentdisplay() {
+            var x = document.getElementById("commitment");
+            if (x.style.display === "none") {
+                x.style.display = "block";} 
+            else {
+                x.style.display = "none";}  }  
+
+            function conflictdisplay() {
+            var x = document.getElementById("conflict");
+            if (x.style.display === "none") {
+                x.style.display = "block";} 
+            else {
+                x.style.display = "none";}  } 
+
+            function trustdisplay() {
+            var x = document.getElementById("trust");
+            if (x.style.display === "none") {
+                x.style.display = "block";} 
+            else {
+                x.style.display = "none";}  }    
+
+
+        </script>
+         <!-- JavaScript Bundle with Popper -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        </body>
+</html>
